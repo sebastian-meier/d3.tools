@@ -26,8 +26,12 @@ d3.tools = {
     */
 	addClass: function(object, new_cls){
 		var cls = object.attr('class');
-		if(cls.indexOf(new_cls)==-1){
-			cls += " "+new_cls;
+		if(cls === null){
+			cls = new_cls;
+		}else{
+			if(cls.indexOf(new_cls)==-1){
+				cls += " "+new_cls;
+			}
 		}
 		object.attr('class', cls);
 	},
@@ -39,9 +43,13 @@ d3.tools = {
     */
 	removeClass: function(object, new_cls){
 		var cls = object.attr('class');
-		if(cls.indexOf(new_cls)>-1){
-			cls = cls.replace(new_cls, '');
-			cls = cls.replace('  ', ' ');
+		if(cls === null){
+			cls = "";
+		}else{
+			if(cls.indexOf(new_cls)>-1){
+				cls = cls.replace(new_cls, '');
+				cls = cls.replace('  ', ' ');
+			}
 		}
 		object.attr('class', cls);
 	},
@@ -53,11 +61,15 @@ d3.tools = {
     */
 	toggleClass: function(object, new_cls){
 		var cls = object.attr('class');
-		if(cls.indexOf(new_cls)>-1){
-			cls = cls.replace(new_cls, '');
-			cls = cls.replace('  ', ' ');
+		if(cls === null){
+			cls = new_cls;
 		}else{
-			cls += " "+new_cls;
+			if(cls.indexOf(new_cls)>-1){
+				cls = cls.replace(new_cls, '');
+				cls = cls.replace('  ', ' ');
+			}else{
+				cls += " "+new_cls;
+			}
 		}
 		object.attr('class', cls);
 	},
