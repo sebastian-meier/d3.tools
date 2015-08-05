@@ -1,13 +1,11 @@
+
+
 d3.tools
 ========
 
-**Adding some useful mini functions for d3 projects**
+**This project is dead.**
 
-## Usage
-
-```
-d3.tools.addClass(d3.select('body'), 'active');
-```
+I stopped working on this repository in favour of https://github.com/sebastian-meier/d3-extended originally by http://webkid.io
 
 ## License
 
